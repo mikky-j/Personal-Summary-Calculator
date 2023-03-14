@@ -1,0 +1,220 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Light-lavender: hsl(241, 100%, 89%);
+  --Dark-gray-blue: hsl(224, 30%, 27%);
+  --Dark-gray-blue-transparent: hsla(224, 30%, 27%, 0.411);
+  --Dark-gray-blue-darker: hsl(223, 32%, 22%);
+  --Violet-blue: hsla(256, 72%, 46%, 1);
+  --Persian-blue: hsla(241, 72%, 46%, 0);
+  --Light-slate-blue: hsl(252, 100%, 67%);
+  --Light-royal-blue: hsl(241, 81%, 54%);
+  --Light-red: hsl(0, 100%, 67%);
+  --Orangey-yellow: hsl(39, 100%, 56%);
+  --Green-teal: hsl(166, 100%, 37%);
+  --Cobalt-blue: hsl(234, 85%, 45%);
+  --Light-red-light: hsla(0, 100%, 67%, 0.1);
+  --Orangey-yellow-light: hsla(39, 100%, 56%, 0.1);
+  --Green-teal-light: hsla(166, 100%, 37%, 0.1);
+  --Cobalt-blue-light: hsla(234, 85%, 45%, 0.1);
+
+  /* Gradients */
+
+  --background-gradient: linear-gradient(
+    to bottom,
+    var(--Light-slate-blue),
+    var(--Light-royal-blue)
+  );
+
+  --Circle-gradient: linear-gradient(
+    to bottom,
+    var(--Violet-blue),
+    var(--Persian-blue)
+  );
+
+  --border-radius: 30px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: "Hanken Grotesk";
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+div.box {
+  display: flex;
+  width: 45%;
+  height: 65%;
+  box-shadow: 2px 2px 20px var(--Light-lavender);
+  border-radius: var(--border-radius);
+}
+
+div.box > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  /* padding: 20px; */
+}
+
+div.box div.result-box {
+  background: var(--background-gradient);
+}
+
+div.box div.result-box p.heading {
+  color: var(--Pale-blue);
+  font-size: 1.5rem;
+}
+
+div.box div.result-box div.result-circular-box {
+  width: 60%;
+  height: 44%;
+  border-radius: 50%;
+  background: var(--Circle-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bold;
+  text-align: center;
+  color: var(--Light-lavender);
+}
+div.box div.result-box div.result-circular-box span {
+  font-size: 4rem;
+  color: var(--White);
+  display: block;
+}
+
+div.box div.result-box div.thoughts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.box div.result-box div.thoughts div.rating {
+  font-size: x-large;
+  font-weight: bold;
+  color: var(--White);
+  margin-bottom: 20px;
+}
+
+div.box div.result-box div.thoughts div.remark {
+  text-align: center;
+  color: var(--Light-lavender);
+  width: 70%;
+}
+
+div.box div.summary-box {
+  background-color: var(--White);
+}
+
+div.box div.summary-box div.heading {
+  flex-grow: 0.15;
+  padding-top: 20px;
+  width: 80%;
+  font-size: larger;
+}
+
+div.box div.summary-box ul.summary-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  flex-grow: 1;
+  width: 80%;
+}
+
+div.box div.summary-box ul.summary-list li.summary-card {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex-grow: 1;
+  margin-top: 10px;
+  border-radius: 20px;
+  width: 100%;
+  background-color: var(--Pale-blue);
+  justify-content: space-between;
+}
+
+div.box div.summary-box ul.summary-list li.summary-card i {
+  margin-right: 5px;
+}
+
+div.box div.summary-box ul.summary-list li.summary-card div.score {
+  color: var(--Dark-gray-blue-transparent);
+  font-weight: bold;
+}
+div.box div.summary-box ul.summary-list li.summary-card div.score span {
+  color: var(--Dark-gray-blue);
+}
+
+div.box div.summary-box ul.summary-list li.summary-card:nth-child(1) {
+  color: var(--Light-red);
+  background-color: var(--Light-red-light);
+}
+
+div.box div.summary-box ul.summary-list li.summary-card:nth-child(2) {
+  color: var(--Orangey-yellow);
+  background-color: var(--Orangey-yellow-light);
+}
+
+div.box div.summary-box ul.summary-list li.summary-card:nth-child(3) {
+  color: var(--Green-teal);
+  background-color: var(--Green-teal-light);
+}
+
+div.box div.summary-box ul.summary-list li.summary-card:nth-child(4) {
+  color: var(--Cobalt-blue);
+  background-color: var(--Cobalt-blue-light);
+}
+
+div.box div.summary-box button.continue {
+  width: 80%;
+  flex-grow: 0.2;
+  background-color: var(--Dark-gray-blue);
+  color: var(--White);
+  border-radius: 40px;
+  border: none;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+div.box div.summary-box button.continue:hover {
+  background-color: var(--Dark-gray-blue-darker);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  div.box {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  div.box > div {
+    width: 100%;
+    height: 50%;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+
+  div.result-circular-box {
+    width: 50% !important;
+    height: 60%;
+  }
+}

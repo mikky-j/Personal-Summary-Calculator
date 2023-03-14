@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Roboto:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/61d7935556.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Enter Data | Summary.io</title>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Hello,</h1>
+      <form action="" id="form">
+        <input type="text" name="name" required placeholder="Enter your name" />
+        <div class="field">
+          <label for="#datafield"
+            ><i class="fa-solid fa-bolt"></i> Reaction</label
+          >
+          <input
+            type="number"
+            id="datafield"
+            name="Reaction"
+            min="1"
+            max="100"
+            required
+            placeholder="Enter your score"
+            aria-controls="hidden"
+          />
+        </div>
+        <div class="field">
+          <label for="#datafield"
+            ><i class="fa-solid fa-brain"></i> Memory</label
+          >
+          <input
+            type="number"
+            id="datafield"
+            name="Memory"
+            min="1"
+            max="100"
+            required
+            placeholder="Enter your score"
+            aria-controls="hidden"
+          />
+        </div>
+        <div class="field">
+          <label for="#datafield"
+            ><i class="fa-solid fa-comment"></i> Verbal</label
+          >
+          <input
+            type="number"
+            id="datafield"
+            name="Verbal"
+            min="1"
+            required
+            max="100"
+            placeholder="Enter your score"
+            aria-controls="hidden"
+          />
+        </div>
+        <div class="field">
+          <label for="#datafield"><i class="fa-solid fa-eye"></i> Visual</label>
+          <input
+            type="number"
+            id="datafield"
+            name="Visual"
+            required
+            min="1"
+            max="100"
+            placeholder="Enter your score"
+            aria-controls="hidden"
+          />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script>
+    const buildSavedString = (formData) => {
+      acc = "";
+      let totalScore = 0;
+      for (const [key, value] of formData) {
+        totalScore += +value;
+        acc += `${key}=${value}&`;
+      }
+      acc += `totalScore=${totalScore}`;
+      return acc;
+    };
+    let formElement = document.getElementById("form");
+    formElement.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let formData = new FormData(event.target);
+      let name = formData.get("name");
+      formData.delete("name");
+      let savedString = buildSavedString(formData);
+      window.localStorage.setItem(name, savedString);
+
+      let url = new URL(window.location.href);
+      url.pathname = "/summary.html";
+      url.search = `?name=${name}`;
+
+      window.location.href = url.href;
+    });
+  </script>
+</html>

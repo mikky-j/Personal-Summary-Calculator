@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="./styles/summary.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Roboto:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/61d7935556.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Results summary</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="result-box">
+        <p class="heading">Your Result</p>
+        <div class="result-circular-box">
+          <p><span id="score-board">76</span> of 100</p>
+        </div>
+        <div class="thoughts">
+          <div class="rating">Great</div>
+          <div class="remark">
+            You scored higher than <span id="percentile">65</span>% of the
+            people who have taken these tests.
+          </div>
+        </div>
+      </div>
+      <div class="summary-box">
+        <div class="heading">Summary</div>
+        <ul id="summary-list" class="summary-list">
+          <li class="summary-card">
+            <div class="title">
+              <span><i class="fa-solid fa-bolt"></i> Reaction</span>
+            </div>
+            <div class="score"><span>80</span> / 100</div>
+          </li>
+          <li class="summary-card">
+            <div class="title">
+              <span><i class="fa-solid fa-brain"></i> Memory</span>
+            </div>
+            <div class="score"><span>80</span> / 100</div>
+          </li>
+          <li class="summary-card">
+            <div class="title">
+              <span><i class="fa-solid fa-comment"></i> Verbal</span>
+            </div>
+            <div class="score"><span>80</span> / 100</div>
+          </li>
+          <li class="summary-card">
+            <div class="title">
+              <span><i class="fa-solid fa-eye"></i> Visual</span>
+            </div>
+            <div class="score"><span>80</span> / 100</div>
+          </li>
+        </ul>
+        <button
+          class="continue"
+          onclick=" window.location.href = window.location.href.split('/s')[0]"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+  <script>
+    var exports = {};
+  </script>
+  <script src="scripts/script.js"></script>
+</html>
