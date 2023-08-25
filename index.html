@@ -113,7 +113,7 @@
       window.localStorage.setItem(name, savedString);
 
       let url = new URL(window.location.href);
-      url.pathname = "/summary.html";
+      url.pathname = "Personal-Summary-Calculator/summary.html";
       url.search = `?name=${name}`;
 
       window.location.href = url.href;
